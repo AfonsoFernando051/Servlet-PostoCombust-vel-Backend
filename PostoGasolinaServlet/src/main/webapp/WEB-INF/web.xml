@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+         id="WebApp_ID" version="4.0">
+  
+  <display-name>PostoGasolinaServlet</display-name>
+  
+  <!-- Configuração da página de boas-vindas -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Mapeamento do servlet -->
+  <servlet>
+    <servlet-name>PostoServlet</servlet-name>
+    <servlet-class>posto.PostoServlet</servlet-class>
+    <!-- Parâmetros de inicialização dos preços dos combustíveis -->
+    <init-param>
+      <param-name>precoGasolina</param-name>
+      <param-value>5.90</param-value> <!-- Exemplo de preço por litro de gasolina -->
+    </init-param>
+    <init-param>
+      <param-name>precoAlcool</param-name>
+      <param-value>4.50</param-value> <!-- Exemplo de preço por litro de álcool -->
+    </init-param>
+    <init-param>
+      <param-name>precoDiesel</param-name>
+      <param-value>4.00</param-value> <!-- Exemplo de preço por litro de diesel -->
+    </init-param>
+  </servlet>
+  
+  <!-- Mapeamento de URL para o servlet -->
+  <servlet-mapping>
+    <servlet-name>PostoServlet</servlet-name>
+    <url-pattern>/calcularViagem</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
